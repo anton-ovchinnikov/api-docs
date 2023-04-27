@@ -1,8 +1,13 @@
+import Navbar from "./components/UI/Navbar/Navbar";
+import {BrowserRouter} from "react-router-dom";
+import Footer from "./components/UI/Footer/Footer";
+
 function App() {
     return (
-        <>
-            <h1>HELLO WORLD!</h1>
-        </>
+        <BrowserRouter>
+            <Navbar/>
+            <Footer/>
+        </BrowserRouter>
     );
 }
 
