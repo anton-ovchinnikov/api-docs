@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
+import {addNewMethod} from "../../../database/methods";
 
 const AddMethodForm = () => {
     const initialState = {
         route: "",
+        parameters: "",
         name: "",
         description: "",
         body: "",
+        response: "",
         section: "",
         type: "POST"
     };
@@ -18,16 +21,24 @@ const AddMethodForm = () => {
                        onChange={event => setFormInfo({...formInfo, route: event.target.value})}/>
             </div>
             <div className="mb-3">
+                <input type="text" className="form-control" placeholder="Parameters" value={formInfo['parameters']}
+                       onChange={event => setFormInfo({...formInfo, parameters: event.target.value})}/>
+            </div>
+            <div className="mb-3">
                 <input type="text" className="form-control" placeholder="Name" value={formInfo['name']}
                        onChange={event => setFormInfo({...formInfo, name: event.target.value})}/>
             </div>
             <div className="mb-3">
-                <input type="text" className="form-control" placeholder="Description" value={formInfo['name']}
+                <input type="text" className="form-control" placeholder="Description" value={formInfo['description']}
                        onChange={event => setFormInfo({...formInfo, description: event.target.value})}/>
             </div>
             <div className="mb-3">
                 <input type="text" className="form-control" placeholder="Body" value={formInfo['body']}
                        onChange={event => setFormInfo({...formInfo, body: event.target.value})}/>
+            </div>
+            <div className="mb-3">
+                <input type="text" className="form-control" placeholder="Response" value={formInfo['response']}
+                       onChange={event => setFormInfo({...formInfo, response: event.target.value})}/>
             </div>
             <div className="mb-3">
                 <input type="text" className="form-control" placeholder="Section" value={formInfo['value']}
@@ -41,7 +52,7 @@ const AddMethodForm = () => {
                 </select>
             </div>
             <div className="mb-3 text-center">
-                <button className="col-5 btn btn-primary">
+                <button className="col-5 btn btn-primary" onClick={async () => await addNewMethod(formInfo)}>
                     Confirm
                 </button>
             </div>

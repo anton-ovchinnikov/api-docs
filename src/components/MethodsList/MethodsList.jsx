@@ -11,7 +11,8 @@ const MethodsList = () => {
 
     return (
         <div className="container my-4">
-            {Object.keys(methods).map(key => <MethodItem key={key} method={methods[key]} methodId={key}/>)}
+            {methods ? Object.keys(methods).map(key => <MethodItem key={key} method={methods[key]}
+                                                                   methodId={key}/>) : null}
         </div>
     );
 };
