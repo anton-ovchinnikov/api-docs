@@ -27,12 +27,12 @@ const MethodItem = ({method, methodId}) => {
                         </div>
                         <div className={`${classes.description} row p-4 py-3 m-0`}>{method['parameters']}</div>
                         <div className="row p-4 py-3 m-0">Body</div>
-                        <div className={`${classes.code} row p-5 py-4 m-0`}>
-                            {method['body']}
+                        <div className={`${classes.code} row p-4 py-4 m-0`}>
+                            <pre>{JSON.stringify(JSON.parse(method['body']), null, 2)}</pre>
                         </div>
                         <div className="row p-4 py-3 m-0">Response</div>
-                        <div className={`${classes.code} row p-5 py-4 m-0`}>
-                            {method['response']}
+                        <div className={`${classes.code} row p-4 py-4 m-0`}>
+                            <pre>{JSON.stringify(JSON.parse(method['response']), null, 2)}</pre>
                         </div>
                     </div>
                 </div>
