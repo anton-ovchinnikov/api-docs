@@ -14,10 +14,10 @@ const Navbar = () => {
                     <div className="collapse navbar-collapse" id="navbar">
                         <ul className="navbar-nav mx-0 mx-lg-5">
                             <li className="nav-item">
-                                <NavLink className="nav-link" aria-current="page" to="/">Главная</NavLink>
+                                <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink className="nav-link" to="/contacts">Контакты</NavLink>
+                                <NavLink className="nav-link" to="/contacts">Contacts</NavLink>
                             </li>
                         </ul>
                     </div>

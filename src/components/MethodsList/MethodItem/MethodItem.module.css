@@ -1,0 +1,21 @@
+.header:hover {
+    cursor: pointer;
+}
+
+.title {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.header_info {
+    color: #000;
+}
+
+.description {
+    background-color: #e4edff;
+}
+
+.code {
+    color: #0dcaf0;
+    background-color: #212121;
+}
