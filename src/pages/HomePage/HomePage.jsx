@@ -4,10 +4,10 @@ import MethodActions from "../../components/MethodActions/MethodActions";
 
 const HomePage = () => {
     return (
-        <>
+        <div className="content">
             <MethodActions/>
             <MethodsList/>
-        </>
+        </div>
     );
 };
 

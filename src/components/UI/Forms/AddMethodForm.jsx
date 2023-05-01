@@ -41,7 +41,7 @@ const AddMethodForm = () => {
                        onChange={event => setFormInfo({...formInfo, response: event.target.value})}/>
             </div>
             <div className="mb-3">
-                <input type="text" className="form-control" placeholder="Section" value={formInfo['value']}
+                <input type="text" className="form-control" placeholder="Section" value={formInfo['section']}
                        onChange={event => setFormInfo({...formInfo, section: event.target.value})}/>
             </div>
             <div className="mb-3">
@@ -52,7 +52,10 @@ const AddMethodForm = () => {
                 </select>
             </div>
             <div className="mb-3 text-center">
-                <button className="col-5 btn btn-primary" onClick={async () => await addNewMethod(formInfo)}>
+                <button className="col-5 btn btn-primary" onClick={async () => {
+                    await addNewMethod(formInfo);
+                    setFormInfo(initialState);
+                }}>
                     Confirm
                 </button>
             </div>

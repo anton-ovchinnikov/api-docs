@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from "./MethodItem.module.css";
+import {delMethod} from "../../../database/methods";
 
 const MethodItem = ({method, methodId}) => {
     return (
@@ -22,8 +23,12 @@ const MethodItem = ({method, methodId}) => {
                 </h2>
                 <div id={`flush-${methodId}`} className="accordion-collapse collapse">
                     <div className="accordion-body p-0 m-0">
-                        <div className={`${classes.description} row p-4 py-3 m-0`}>
+                        <div
+                            className={`${classes.description} row p-4 py-3 m-0 align-items-center d-flex justify-content-between`}>
                             {method['description']}
+                            <button className="col-1 btn btn-outline-danger"
+                                    onClick={async () => await delMethod(methodId)}>DEL
+                            </button>
                         </div>
                         <div className={`${classes.description} row p-4 py-3 m-0`}>{method['parameters']}</div>
                         <div className="row p-4 py-3 m-0">Body</div>
